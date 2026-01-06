@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  docker:
+    build: ./docker
+    volumes:
+      - model_volume:/model_data
+      - ./data:/data
+    command: ["python", "modelo.py"]
+    restart: "no"
+    networks:
+      - app-network
+
+  api:
+    build: ./api
+    ports:
+      - "5000:5000"   
+    volumes:
+      - model_volume:/model_data
+    depends_on:
+      - docker
+    networks:
+      - app-network
+
+  app:
+    build: ./app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    networks:
+      - app-network
+    environment:
+      - API_URL=http://api:5000
+
+volumes:
+  model_volume:
+
+networks:
+  app-network:
+    driver: bridge
