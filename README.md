@@ -25,6 +25,49 @@ O aplicativo:
 
 ---
 
+## 🧩 Tecnologias Utilizadas
+
+- Python  
+- Scikit-Learn  
+- Pandas  
+- NumPy  
+- Streamlit  
+- Flask (API)  
+- Docker  
+- Docker Compose  
+
+---
+## 🧠 Como Funciona
+
+1. O usuário insere dados do paciente na interface Streamlit
+
+2. A aplicação envia os dados para a API Flask
+
+3. O modelo de regressão logística realiza a predição
+
+4. O resultado é exibido na tela com a classificação de obesidade
+
+---
+
+## 🛠️ Como Executar o Projeto
+
+### 🐳 Executando com Docker
+
+**Pré-requisitos:** Docker e Docker Compose instalados
+
+# Clonar o repositório
+git clone https://github.com/CorsiIsa/Tech_Challenge_Obesidade.git
+cd Tech_Challenge_Obesidade
+
+# Build dos containers
+docker compose build
+
+# Subir a aplicação
+docker compose up
+
+# Após iniciar
+acesse no navegador http://localhost:8501
+
 ## 🗂 Estrutura do Projeto
 
 ```bash
@@ -38,35 +81,4 @@ Tech_Challenge_Obesidade/
 └── start.ps1                 # Scripts auxiliares (Windows) ```
 
 ---
-## 🧩 Tecnologias Utilizadas
 
-- Python  
-- Scikit-Learn  
-- Pandas  
-- NumPy  
-- Streamlit  
-- Flask (API)  
-- Docker  
-- Docker Compose  
-
----
-
-## 🛠️ Como Executar o Projeto
-
-### 🐳 Executando com Docker
-
-**Pré-requisitos:** Docker e Docker Compose instalados
-
-```bash
-# Clonar o repositório
-git clone https://github.com/CorsiIsa/Tech_Challenge_Obesidade.git
-cd Tech_Challenge_Obesidade
-
-# Build dos containers
-docker compose build
-
-# Subir a aplicação
-docker compose up
-
-# Após iniciar
-acesse no navegador http://localhost:8501
